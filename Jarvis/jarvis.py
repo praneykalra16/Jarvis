@@ -7,7 +7,7 @@ import webbrowser as wb
 import os
 import random
 import pyautogui
-
+import playsound
 engine = pyttsx3.init()
 
 def speak(audio):
@@ -52,8 +52,7 @@ def wishme():
 
 def screenshot():
     img = pyautogui.screenshot()
-    img.save("C:\\Users\\prane\\OneDrive\\Documents\\Jarvis\\ss3.png")
-
+    img.save("C:\\Users\\prane\\OneDrive\\Documents\\Jarvis\\ss.png")
 
 def takecommand():
     r = sr.Recognizer()
@@ -120,12 +119,7 @@ if __name__ == "__main__":
             wb.open("stackoverflow.com")
 
         elif "play music" in query:
-            song_dir = "C:\\Users\\prane\\Music"
-            songs = os.listdir(song_dir)
-            print(songs)
-            x = len(songs)
-            y = random.randint(0,x)
-            os.startfile(os.path.join(song_dir, songs[y]))
+            playsound.playsound('C:\\Users\\prane\\Music\\excuses.mp3', True)
 
         elif "open chrome" in query:
             chromePath = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
